@@ -1,19 +1,16 @@
 package event_bus_test;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.MessageConsumer;
 
-import java.lang.reflect.Method;
-
 /**
  * @author Vadym Mitin
  */
-public class MainVerticle extends AbstractVerticle implements Handler<Message<String>> {
+public class MainVerticle extends AbstractVerticle {
 
     private static Vertx vertx = Vertx.vertx();
     private static EventBus eventBus = vertx.eventBus();
@@ -30,7 +27,7 @@ public class MainVerticle extends AbstractVerticle implements Handler<Message<St
             }
         });
 
-        eventBus.send("news.uk.spor1t",
+        eventBus.send("news.uk.sport",
                 "Yay! Someone kicked a ball across a patch of grass",
                 ar -> {
                     if (ar.succeeded()) {

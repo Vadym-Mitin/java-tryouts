@@ -1,15 +1,19 @@
 package event_bus_test;
 
-import java.util.function.UnaryOperator;
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.eventbus.EventBus;
 
-public class Consumer{
-    public static void main(String[] args) {
-        UnaryOperator.identity();
-    }
-    static <T> UnaryOperator<T> identity() {
-        return t -> t;
-    }
-    public void getConsumer(){
-
+/**
+ * @author Vadym Mitin
+ */
+public class Consumer extends AbstractVerticle {
+    @Override
+    public void start() {
+        EventBus eb = vertx.eventBus();
+        eb.consumer("consumer.test", message -> {
+            System.out.println("I have received a message: " + message.body());
+            message.reply("how interesting!");
+        });
+        System.out.println("I, Consumer, i was deployed!!!");
     }
 }

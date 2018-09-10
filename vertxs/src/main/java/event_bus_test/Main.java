@@ -1,5 +1,6 @@
 package event_bus_test;
 
+import io.vertx.core.Launcher;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.spi.cluster.ClusterManager;
@@ -19,6 +20,7 @@ public class Main {
                 Vertx vertx = res.result();
                 vertx.deployVerticle(new Consumer());
                 vertx.deployVerticle(new Sender());
+//                Launcher.executeCommand("run","-"+Consumer.class.getName()+".java");
             } else {
                 System.out.println("failde");
             }

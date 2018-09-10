@@ -12,12 +12,9 @@ public class Consumer extends AbstractVerticle {
     @Override
     public void start() {
         EventBus eb = vertx.eventBus();
-        eb.consumer("consumer.test", new Handler<Message<Object>>() {
-            @Override
-            public void handle(Message<Object> message) {
-                System.out.println("I have received a message: " + message.body());
-                message.reply("how interesting!");
-            }
+        eb.consumer("consumer.test", message -> {
+            System.out.println("I have received a message: " + message.body());
+            message.reply("how interesting!");
         });
         System.out.println("I, Consumer, i was deployed!!!");
     }

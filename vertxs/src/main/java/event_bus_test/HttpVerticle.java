@@ -10,7 +10,7 @@ import io.vertx.core.eventbus.MessageConsumer;
 /**
  * @author Vadym Mitin
  */
-public class MainVerticle extends AbstractVerticle {
+public class HttpVerticle extends AbstractVerticle {
 
     private static Vertx vertx = Vertx.vertx();
     private static EventBus eventBus = vertx.eventBus();

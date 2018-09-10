@@ -13,7 +13,7 @@ public class Sender extends AbstractVerticle {
     public void start() throws Exception {
         EventBus eventBus = vertx.eventBus();
         vertx.setPeriodic(2000, v -> {
-            eventBus.publish("consumer.test", "Hello Consumer!!!!!!1111 = " + i++);
+            eventBus.send("consumer.test", "Hello Consumer!!!!!!1111 = " + i++);
         });
         System.out.println("I, Sender, i was deployed!!!");
     }

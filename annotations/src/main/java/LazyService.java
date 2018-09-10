@@ -1,5 +1,5 @@
 
-@Service(name = "super Lazy Service",
+@ServiceAnnotation(name = "super Lazy ServiceAnnotation",
         lazyLoad = true)
 public class LazyService {
 
@@ -7,9 +7,9 @@ public class LazyService {
         System.out.println("run");
     }
 
-    @Init(suppressException = true)
+    @InitAnnotation(suppressException = true)
     public void initLazy() throws Exception {
         System.out.println("SUPER LAZY CLASS METHOD AND OTHER INIT AND THROW EXCEPTION11!!!1111!!!");
-        throw new Exception("EXCEPTION");
+//        throw new Exception("EXCEPTION");
     }
 }

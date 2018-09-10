@@ -14,19 +14,27 @@ public class Main {
     }
 
     static void inspectService(Class<?> service) {
-        Class<Service> annotation = Service.class;
-        Class<Init> initAnnotation = Init.class;
+        Class<ServiceAnnotation> annotation = ServiceAnnotation.class;
+        Class<InitAnnotation> initAnnotation = InitAnnotation.class;
         if (service.isAnnotationPresent(annotation)) {
             System.out.println("Class name: " + service.getAnnotation(annotation).name());
             for (Method method : service.getDeclaredMethods()) {
                 if (method.isAnnotationPresent(initAnnotation)) {
-                    Init methodAnnotation = method.getAnnotation(initAnnotation);
+                    InitAnnotation methodAnnotation = method.getAnnotation(initAnnotation);
                     if (methodAnnotation.suppressException()) {
                         System.out.print("in method: " + method.getName());
                         System.out.println(":-> SUPPRESS warning");
                         try {
-                            Object o = service.newInstance();
-                            method.invoke(o);
+                            if (methodAnnotation.returned()) {
+                                Class<?> returnType = method.getReturnType();
+                                System.out.println("_______________");
+                                System.out.println("return tupe is: "+returnType);
+                                System.out.println("____________");
+//                                returnType.newInstance();
+                            } else {
+                                Object o = service.newInstance();
+                                method.invoke(o);
+                            }
                         } catch (InstantiationException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -38,9 +46,15 @@ public class Main {
                         System.out.print("in method: " + method.getName());
                         System.out.println(":-> WARNING is present");
                         try {
-                            Object o = service.newInstance();
-                            method.invoke(o);
-
+                            if (methodAnnotation.returned()) {
+                                Class<?> returnType = method.getReturnType();
+                                System.out.println("_______________");
+                                System.out.println("return tupe is: "+returnType);
+                                System.out.println("____________");
+                            } else {
+                                Object o = service.newInstance();
+                                method.invoke(o);
+                            }
                         } catch (InstantiationException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -56,7 +70,7 @@ public class Main {
             }
         } else {
             System.out.print("in Class: " + service.getName());
-            System.out.println(":--> Service NOT FOUND");
+            System.out.println(":--> ServiceAnnotation NOT FOUND");
         }
         System.out.println("__________________________");
 

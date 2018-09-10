@@ -5,6 +5,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Init {
+public @interface InitAnnotation {
     boolean suppressException() default false;
+    boolean returned() default false;
 }

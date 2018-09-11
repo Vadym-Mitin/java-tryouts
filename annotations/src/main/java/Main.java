@@ -25,16 +25,7 @@ public class Main {
                         System.out.print("in method: " + method.getName());
                         System.out.println(":-> SUPPRESS warning");
                         try {
-                            if (methodAnnotation.returned()) {
-                                Class<?> returnType = method.getReturnType();
-                                System.out.println("_______________");
-                                System.out.println("return tupe is: "+returnType);
-                                System.out.println("____________");
-//                                returnType.newInstance();
-                            } else {
-                                Object o = service.newInstance();
-                                method.invoke(o);
-                            }
+                            checkReturned(service, method, methodAnnotation);
                         } catch (InstantiationException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -46,15 +37,7 @@ public class Main {
                         System.out.print("in method: " + method.getName());
                         System.out.println(":-> WARNING is present");
                         try {
-                            if (methodAnnotation.returned()) {
-                                Class<?> returnType = method.getReturnType();
-                                System.out.println("_______________");
-                                System.out.println("return tupe is: "+returnType);
-                                System.out.println("____________");
-                            } else {
-                                Object o = service.newInstance();
-                                method.invoke(o);
-                            }
+                            checkReturned(service, method, methodAnnotation);
                         } catch (InstantiationException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -74,5 +57,18 @@ public class Main {
         }
         System.out.println("__________________________");
 
+    }
+
+    private static void checkReturned(Class<?> service, Method method, InitAnnotation methodAnnotation) throws InstantiationException, IllegalAccessException, InvocationTargetException {
+        if (methodAnnotation.returned()) {
+            Class<?> returnType = method.getReturnType();
+            System.out.println("_______________");
+            System.out.println("return tupe is: " + returnType);
+            System.out.println("____________");
+//                                returnType.newInstance();
+        } else {
+            Object o = service.newInstance();
+            method.invoke(o);
+        }
     }
 }

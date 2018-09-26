@@ -1,4 +1,4 @@
-package event_bus_test;
+package http_verticle;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Handler;

@@ -1,11 +1,8 @@
 package http_verticle;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
 
 /**
  * @author Vadym Mitin
@@ -17,34 +14,19 @@ public class HttpVerticle extends AbstractVerticle {
 
     public static void main(String[] args) {
 
+        eventBus.consumer("asd", message -> {
+            ConsumerHandler.handle((String) message.body());
+            message.reply("Hello you!!!!");
 
-        MessageConsumer<String> consumer = eventBus.consumer("news.uk.sport");
-
-        eventBus.consumer("asd", new Handler<Message<Object>>() {
-            @Override
-            public void handle(Message<Object> message) {
-
-            }
         });
 
-        eventBus.send("news.uk.sport",
-                "Yay! Someone kicked a ball across a patch of grass",
+        eventBus.send("asd", "Hello!!!!!",
                 ar -> {
                     if (ar.succeeded()) {
-                        System.out.println("Received reply: " + ar.result().body());
+                        SenderHandler.handle((String) ar.result().body());
                     }
                 });
 
-        long timerID = vertx.setPeriodic(1000,
-                id -> System.out.println("And every second this is printed"));
-
         System.out.println("First this is printed");
     }
-
-    public void handle(Message message) {
-        System.out.println("I have received a message: " + message.body());
-        message.reply("how interesting!");
-    }
-
-
 }

@@ -15,8 +15,8 @@ public class HttpVerticle extends AbstractVerticle {
     public static void main(String[] args) {
 
         eventBus.consumer("asd", message -> {
-            ConsumerHandler.handle((String) message.body());
-            message.reply("Hello you!!!!");
+            String handle = ConsumerHandler.handle((String) message.body());
+            message.reply(handle);
 
         });
 

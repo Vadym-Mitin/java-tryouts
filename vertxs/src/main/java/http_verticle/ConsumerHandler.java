@@ -1,7 +1,8 @@
 package http_verticle;
 
 public class ConsumerHandler {
-    public static void handle(String s) {
+    public static String handle(String s) {
         System.out.println("I receive a message \"" + s + "\" and send response");
+        return "Hello you!!!!";
     }
 }

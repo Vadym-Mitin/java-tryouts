@@ -12,6 +12,7 @@
         <module>annotations</module>
         <module>vertxs</module>
         <module>exceptions</module>
+        <module>binary_operations</module>
 
     </modules>
 

@@ -9,6 +9,7 @@
         <module name="annotation-tryouts" />
         <module name="annotations" />
         <module name="annotationtryouts" />
+        <module name="binary_operations" />
         <module name="exceptions" />
         <module name="vertxs" />
       </profile>

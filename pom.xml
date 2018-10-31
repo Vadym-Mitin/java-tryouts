@@ -13,6 +13,8 @@
         <module>vertxs</module>
         <module>exceptions</module>
         <module>binary_operations</module>
+        <module>numeric-operations</module>
+        <module>collections-tryout</module>
 
     </modules>
 

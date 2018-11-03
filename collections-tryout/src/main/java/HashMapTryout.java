@@ -34,7 +34,7 @@ public class HashMapTryout {
         while (itr.hasNext())
             System.out.println(itr.next());
 
-        System.out.println("====lambdads foreach====");
+        System.out.println("====lambdas foreach====");
         hashmap.forEach((k, v) -> System.out.println(k + "; " + v));
     }
 }

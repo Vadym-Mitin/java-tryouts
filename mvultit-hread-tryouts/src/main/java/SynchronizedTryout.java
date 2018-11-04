@@ -23,18 +23,14 @@ public class SynchronizedTryout {
     }
 
     void notSync() throws InterruptedException {
-        Thread thread1 = new Thread(new Runnable() {
-            public void run() {
-                for (int i = 0; i < 20000; i++) {
-                    notCount++;
-                }
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 20000; i++) {
+                notCount++;
             }
         });
-        Thread thread2 = new Thread(new Runnable() {
-            public void run() {
-                for (int i = 0; i < 20000; i++) {
-                    notCount++;
-                }
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 20000; i++) {
+                notCount++;
             }
         });
         thread1.start();
@@ -45,18 +41,14 @@ public class SynchronizedTryout {
     }
 
     void sync() throws InterruptedException {
-        Thread thread1 = new Thread(new Runnable() {
-            public void run() {
-                for (int i = 0; i < 20000; i++) {
-                    setCounter();
-                }
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 20000; i++) {
+                setCounter();
             }
         });
-        Thread thread2 = new Thread(new Runnable() {
-            public void run() {
-                for (int i = 0; i < 20000; i++) {
-                    setCounter();
-                }
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 20000; i++) {
+                setCounter();
             }
         });
         thread1.start();

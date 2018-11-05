@@ -14,6 +14,7 @@
         <module name="exceptions" />
         <module name="mvultit-hread-tryouts" />
         <module name="numeric-operations" />
+        <module name="oop-tryout" />
         <module name="vertxs" />
       </profile>
     </annotationProcessing>

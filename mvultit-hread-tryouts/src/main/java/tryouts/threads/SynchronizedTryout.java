@@ -1,3 +1,4 @@
+package tryouts.threads;
 
 /**
  * @author Vadym Mitin

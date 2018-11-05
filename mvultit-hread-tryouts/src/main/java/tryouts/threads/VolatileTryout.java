@@ -1,3 +1,5 @@
+package tryouts.threads;
+
 import static java.lang.System.currentTimeMillis;
 
 /**

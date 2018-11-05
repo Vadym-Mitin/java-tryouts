@@ -16,6 +16,7 @@
         <module>numeric-operations</module>
         <module>collections-tryout</module>
         <module>mvultit-hread-tryouts</module>
+        <module>oop-tryout</module>
 
     </modules>
 

@@ -58,16 +58,30 @@ public class TryoutWaitNotifyWithQueue {
         }
 
         private void consumer() throws InterruptedException {
+            int count = 9;
             while (true) {
                 synchronized (lock) {
                     while (queue.size() == 0) {
                         lock.wait();
                     }
-                    System.out.println(queue.poll());
+
+                    int item = 0;
+                    for (int i = 0; i < count; i++) {
+                        item = queue.poll();
+
+                    }
+                    if (count == 10) {
+                        count = 0;
+                    }
+
+                    count++;
+
+                    System.out.println(item);
                     System.out.println("queue size  = " + queue.size());
+
                     lock.notify();
                 }
-                Thread.sleep(1000);
+                Thread.sleep(500);
             }
 
         }

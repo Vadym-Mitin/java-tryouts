@@ -15,8 +15,9 @@
         <module>binary_operations</module>
         <module>numeric-operations</module>
         <module>collections-tryout</module>
-        <module>mvultit-hread-tryouts</module>
         <module>oop-tryout</module>
+        <module>design-patterns</module>
+        <module>multi-thread-tryouts</module>
 
     </modules>
 

@@ -11,11 +11,12 @@
         <module name="annotationtryouts" />
         <module name="binary_operations" />
         <module name="collectionstryout" />
+        <module name="design-patterns" />
         <module name="exceptions" />
-        <module name="mvultit-hread-tryouts" />
+        <module name="multi-thread-tryouts" />
         <module name="numeric-operations" />
         <module name="oop-tryout" />
-        <module name="vertxs" />
+        <module name="vert-x-tryout" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

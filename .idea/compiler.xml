@@ -13,6 +13,7 @@
         <module name="collectionstryout" />
         <module name="design-patterns" />
         <module name="exceptions" />
+        <module name="java-fx-tryouts" />
         <module name="multi-thread-tryouts" />
         <module name="numeric-operations" />
         <module name="oop-tryout" />

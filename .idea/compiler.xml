@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,14 +11,18 @@
         <module name="annotations" />
         <module name="annotationtryouts" />
         <module name="binary_operations" />
+        <module name="collections-tryout" />
         <module name="collectionstryout" />
+        <module name="DB-Tryout" />
         <module name="design-patterns" />
         <module name="exceptions" />
         <module name="java-fx-tryouts" />
         <module name="multi-thread-tryouts" />
+        <module name="NumeralOperations" />
         <module name="numeric-operations" />
         <module name="oop-tryout" />
         <module name="vert-x-tryout" />
+        <module name="vertxs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

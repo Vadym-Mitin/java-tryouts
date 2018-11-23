@@ -23,6 +23,7 @@
         <module>design-patterns</module>
         <module>multi-thread-tryouts</module>
         <module>java-fx-tryouts</module>
+        <module>Oracle-Tryout</module>
 
     </modules>
     <dependencies>

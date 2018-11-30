@@ -12,7 +12,7 @@ public class MessageFactory {
    static {
       Properties prop = new Properties();
 
-      try (InputStream in = MessageFactory.class.getClassLoader().getResourceAsStream("app.properties")) {
+      try (InputStream in = MessageFactory.class.getClassLoader().getResourceAsStream("message.app/app.properties")) {
          prop.load(in);
          String messageProviderClass = prop.getProperty("messageProviderClass");
          String messageRendererClass = prop.getProperty("messageRendererClass");

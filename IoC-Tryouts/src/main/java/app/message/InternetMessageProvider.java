@@ -1,4 +1,4 @@
-package message.app;
+package app.message;
 
 import org.springframework.stereotype.Component;
 

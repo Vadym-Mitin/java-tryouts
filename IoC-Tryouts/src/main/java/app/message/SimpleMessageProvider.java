@@ -1,4 +1,4 @@
-package message.app;
+package app.message;
 
 public class SimpleMessageProvider implements MessageProvider {
    @Override

@@ -1,4 +1,4 @@
-package message.app;
+package app.message;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ public class MessageFactory {
    static {
       Properties prop = new Properties();
 
-      try (InputStream in = MessageFactory.class.getClassLoader().getResourceAsStream("message.app/app.properties")) {
+      try (InputStream in = MessageFactory.class.getClassLoader().getResourceAsStream("app/message/app.properties")) {
          prop.load(in);
          String messageProviderClass = prop.getProperty("messageProviderClass");
          String messageRendererClass = prop.getProperty("messageRendererClass");

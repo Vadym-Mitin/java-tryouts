@@ -1,8 +1,8 @@
-package message.app;
+package app.message;
 
 public class SimpleMain {
    public static void main(String[] args) {
-//      message.app.MessageProvider provider = message.app.MessageFactory.getMessageProvider();
+//      MessageProvider provider = MessageFactory.getMessageProvider();
       MessageRenderer renderer = MessageFactory.getMessageRenderer();
       renderer.render();
    }

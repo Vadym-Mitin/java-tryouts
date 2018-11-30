@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SimpleMessageRenderer implements MessageRenderer {
-   @Autowired
+
    private final MessageProvider provider;
 
+   @Autowired
    public SimpleMessageRenderer(MessageProvider provider) {
       this.provider = provider;
    }

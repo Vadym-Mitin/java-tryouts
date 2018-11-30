@@ -16,11 +16,13 @@
         <module name="DB-Tryout" />
         <module name="design-patterns" />
         <module name="exceptions" />
+        <module name="IoC-Tryouts" />
         <module name="java-fx-tryouts" />
         <module name="multi-thread-tryouts" />
         <module name="NumeralOperations" />
         <module name="numeric-operations" />
         <module name="oop-tryout" />
+        <module name="Oracle-Tryout" />
         <module name="vert-x-tryout" />
         <module name="vertxs" />
       </profile>

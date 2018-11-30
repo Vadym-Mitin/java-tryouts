@@ -11,6 +11,6 @@ public class JavaConfig {
 
    @Bean
    public MessageRenderer renderer(@Autowired MessageProvider provider) {
-      return new SimpleMessageRenderer(provider);
+      return new SimpleMessageRenderer();
    }
 }

@@ -14,8 +14,8 @@ public class MessageFactory {
 
       try (InputStream in = MessageFactory.class.getClassLoader().getResourceAsStream("app/message/app.properties")) {
          prop.load(in);
-         String messageProviderClass = prop.getProperty("messageProviderClass");
-         String messageRendererClass = prop.getProperty("messageRendererClass");
+         String messageProviderClass = prop.getProperty("provider.class");
+         String messageRendererClass = prop.getProperty("renderer.class");
          messageProvider = (MessageProvider) Class.forName(messageProviderClass).newInstance();
          messageRenderer = (MessageRenderer) Class.forName(messageRendererClass).getConstructor(MessageProvider.class).newInstance(messageProvider);
       } catch (IOException | IllegalAccessException | InstantiationException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {

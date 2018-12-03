@@ -42,7 +42,6 @@ public class Generator {
         for (int i = 0; i < iterations; i++) {
 
             int flag = rnd.nextInt(3);
-//            System.out.println(flag);
             if (flag >= 1) {
                 expression.add("+");
 

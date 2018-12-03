@@ -49,7 +49,6 @@ public class ExpressionFormatter {
             sb.append(value);
             sb.append("MM ");
         }
-//        System.out.println(sb.toString());
         return sb.toString();
     }
 

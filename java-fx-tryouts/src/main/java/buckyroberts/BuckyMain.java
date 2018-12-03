@@ -1,3 +1,5 @@
+package buckyroberts;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -7,9 +9,12 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
+ * https://github.com/buckyroberts/Source-Code-from-Tutorials/tree/master/JavaFX
+ * https://www.youtube.com/watch?v=QGGE0WsUslc&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG&index=3
+ *
  * @author Vadym Mitin
  */
-public class Main extends Application implements EventHandler<ActionEvent> {
+public class BuckyMain extends Application implements EventHandler<ActionEvent> {
 
     Button button;
 

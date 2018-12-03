@@ -24,6 +24,7 @@
         <module>java-fx-tryouts</module>
         <module>DB-Tryout</module>
         <module>IoC-Tryouts</module>
+        <module>spring-web-app</module>
 
     </modules>
     <dependencies>

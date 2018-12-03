@@ -19,6 +19,7 @@ public class ExpressionFormatter {
                 sb.append(" ");
             }
         }
+        sb.append(" =");
 
         return sb.toString();
     }

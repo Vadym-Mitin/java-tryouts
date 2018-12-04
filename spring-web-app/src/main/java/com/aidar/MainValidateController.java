@@ -2,6 +2,7 @@ package com.aidar;
 
 import com.aidar.dao.UserDAO;
 import com.aidar.model.User;
+import com.aidar.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * https://www.youtube.com/watch?v=CKR4pmXntjw&index=6&list=PLVKSU8yHkskF5LT1cNTdGXINtOrxAxjjV
@@ -29,7 +28,9 @@ import java.util.List;
 public class MainValidateController {
     @Autowired
     private UserDAO userDAO;
-//    public static final List<User> USERS = new ArrayList<>();
+
+    @Autowired
+    private UserValidator userValidator;
 
     @GetMapping("/")
     public String view(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name, Model model) {
@@ -51,10 +52,10 @@ public class MainValidateController {
 
     @PostMapping("/users/new")
     public String signUp(@ModelAttribute @Valid User user, BindingResult result) throws SQLException {
+        userValidator.validate(user, result);
         if (result.hasErrors()) {
             return "/sign_up_validate";
         }
-//        USERS.add(user);
         userDAO.addUserToDB(user);
         return "redirect:/users";
     }

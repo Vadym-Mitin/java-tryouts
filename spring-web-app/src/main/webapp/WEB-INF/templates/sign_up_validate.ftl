@@ -1,7 +1,7 @@
 <#assign sf=JspTaglibs["http://www.springframework.org/tags/form"]>
 <html>
 <head>
-    <title>Sign up</title>
+    <title>Sign up with validation</title>
 </head>
 <body>
 <@sf.form action="/users/new" method="post" modelAttribute="user">

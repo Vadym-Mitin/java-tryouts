@@ -12,6 +12,5 @@
 <#else >
     There are no users
 </#if>
-
 </body>
 </html>

@@ -48,32 +48,47 @@ public class UserDAO {
         PreparedStatement selectFromDatabase = connection.prepareStatement("select* from users");
         ResultSet setOfUsers = selectFromDatabase.executeQuery();
         while (setOfUsers.next()) {
-            User user = new User();
-            user.setName(setOfUsers.getString(1));
-            user.setSurname(setOfUsers.getString(2));
-            user.setEmail(setOfUsers.getString(3));
+            User user = createUser(setOfUsers);
             users.add(user);
         }
         return users;
     }
 
+    public User getUserByEmail(String email) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("select * from users where email= ?");
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return createUser(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    private User createUser(ResultSet rs) throws SQLException {
+        User user = new User();
+        user.setName(rs.getString(1));
+        user.setSurname(rs.getString(2));
+        user.setEmail(rs.getString(3));
+        return user;
+    }
+
     public void addUserToDB(User user) throws SQLException {
+
         String name = user.getName();
         String surname = user.getSurname();
         String email = user.getEmail();
-        Statement statement = connection.createStatement();
-        StringBuilder sb = new StringBuilder();
-        sb.append("INSERT into users values ('");
-        sb.append(name);
-        sb.append("', '");
-        sb.append(surname);
-        sb.append("', '");
-        sb.append(email);
-        sb.append("');");
-        String sql = sb.toString();
-        System.out.println(sql);
-        int result = statement.executeUpdate(sql);
-        System.out.println(result);
+
+        PreparedStatement ps = connection.prepareStatement("INSERT into users values (?, ?, ?)");
+
+        ps.setString(1, name);
+        ps.setString(2, surname);
+        ps.setString(3, email);
+        ps.execute();
     }
 
 }

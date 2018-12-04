@@ -1,94 +1,49 @@
 package com.aidar.dao;
 
 import com.aidar.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
+import java.util.Optional;
 
 /**
+ * https://www.youtube.com/watch?v=YaTAE9EqYX0&list=PLVKSU8yHkskF5LT1cNTdGXINtOrxAxjjV&index=13
+ *
  * @author Vadym Mitin
  */
 @Component
 public class UserDAO {
-    public static Connection connection;
 
-    // initialize db connection
-    static {
-        String url;
-        String username;
-        String password;
-        Properties prop = new Properties();
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
-        try (InputStream in = UserDAO.class.getClassLoader().getResourceAsStream("./postgres.properties")) {
-            prop.load(in);
+    public List<User> getAll() {
+//        List<User> users = jdbcTemplate.query("select* from users", (rs, rowNum) -> {
+//            User user = createUser(rs);
+//            return user;
+//        });
 
-            url = prop.getProperty("url");
-            username = prop.getProperty("username");
-            password = prop.getProperty("password");
-
-            Class.forName("org.postgresql.Driver");
-
-            connection = DriverManager.getConnection(url, username, password);
-
-        } catch (IOException | SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-    public List<User> getAll() throws SQLException {
-        List<User> users = new ArrayList<>();
-        PreparedStatement selectFromDatabase = connection.prepareStatement("select* from users");
-        ResultSet setOfUsers = selectFromDatabase.executeQuery();
-        while (setOfUsers.next()) {
-            User user = createUser(setOfUsers);
-            users.add(user);
-        }
+        BeanPropertyRowMapper<User> rowMapper = new BeanPropertyRowMapper<>(User.class);
+        List<User> users = jdbcTemplate.query("select* from users", rowMapper);
         return users;
     }
 
     public User getUserByEmail(String email) {
-        try {
-            PreparedStatement ps = connection.prepareStatement("select * from users where email= ?");
-            ps.setString(1, email);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                return createUser(rs);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        List<User> users = jdbcTemplate.query("select * from users where email= ?"
+                , new Object[]{email}
+                , new BeanPropertyRowMapper<>(User.class)
+        );
+        Optional<User> user = users.stream().findAny();
+        return user.orElse(null);
     }
 
-    private User createUser(ResultSet rs) throws SQLException {
-        User user = new User();
-        user.setName(rs.getString(1));
-        user.setSurname(rs.getString(2));
-        user.setEmail(rs.getString(3));
-        return user;
-    }
-
-    public void addUserToDB(User user) throws SQLException {
-
+    public void addUserToDB(User user) {
         String name = user.getName();
         String surname = user.getSurname();
         String email = user.getEmail();
-
-        PreparedStatement ps = connection.prepareStatement("INSERT into users values (?, ?, ?)");
-
-        ps.setString(1, name);
-        ps.setString(2, surname);
-        ps.setString(3, email);
-        ps.execute();
+        jdbcTemplate.update("INSERT into users values (?, ?, ?)", name, surname, email);
     }
-
 }

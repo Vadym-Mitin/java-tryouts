@@ -10,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.sql.SQLException;
 
 /**
  * https://www.youtube.com/watch?v=CKR4pmXntjw&index=6&list=PLVKSU8yHkskF5LT1cNTdGXINtOrxAxjjV
@@ -20,12 +19,13 @@ import java.sql.SQLException;
  * see the Mapped Server Log section for the route to your method mapping. like "{[/blablabla/blabla]}"
  * <p>
  * it is important to keep of the application context section in your servers launch configuration
- * because if you write something other than "" server will send you to this address
+ * because if you write something other than "/" server will send you to this address
  *
  * @author Vadym Mitin
  */
 @Controller
 public class MainValidateController {
+
     @Autowired
     private UserDAO userDAO;
 
@@ -39,7 +39,7 @@ public class MainValidateController {
     }
 
     @GetMapping("/users")
-    public String getUsers(Model model) throws SQLException {
+    public String getUsers(Model model) {
         model.addAttribute("users", userDAO.getAll());
         return "/users";
     }
@@ -51,7 +51,7 @@ public class MainValidateController {
     }
 
     @PostMapping("/users/new")
-    public String signUp(@ModelAttribute @Valid User user, BindingResult result) throws SQLException {
+    public String signUp(@ModelAttribute @Valid User user, BindingResult result) {
         userValidator.validate(user, result);
         if (result.hasErrors()) {
             return "/sign_up_validate";

@@ -1,7 +1,7 @@
 package com.aidar.model;
 
-import javafx.beans.DefaultProperty;
 
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -9,7 +9,13 @@ import javax.validation.constraints.Size;
 /**
  * @author Vadym Mitin
  */
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @NotBlank(message = "Name is required")
     private String name;
 
@@ -50,5 +56,13 @@ public class User {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -13,8 +13,8 @@ import java.util.Properties;
 /**
  * @author Vadym Mitin
  */
-//@Component
-public class OldUserDAO {
+@Component
+public class JdbcApiUserDAO implements UserDAO {
     private static Connection connection;
 
     // initialize db connection
@@ -25,7 +25,7 @@ public class OldUserDAO {
         Properties prop = new Properties();
 
         // load db properties
-        try (InputStream in = OldUserDAO.class.getClassLoader().getResourceAsStream("persistence.properties")) {
+        try (InputStream in = JdbcApiUserDAO.class.getClassLoader().getResourceAsStream("persistence.properties")) {
             prop.load(in);
 
             url = prop.getProperty("url");
@@ -45,13 +45,17 @@ public class OldUserDAO {
         }
     }
 
-    public List<User> getAll() throws SQLException {
+    public List<User> getAll() {
         List<User> users = new ArrayList<>();
-        PreparedStatement selectFromDatabase = connection.prepareStatement("select* from users");
-        ResultSet setOfUsers = selectFromDatabase.executeQuery();
-        while (setOfUsers.next()) {
-            User user = createUser(setOfUsers);
-            users.add(user);
+        try {
+            PreparedStatement selectFromDatabase = connection.prepareStatement("select* from users");
+            ResultSet setOfUsers = selectFromDatabase.executeQuery();
+            while (setOfUsers.next()) {
+                User user = createUser(setOfUsers);
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return users;
     }
@@ -78,18 +82,24 @@ public class OldUserDAO {
         return user;
     }
 
-    public void addUserToDB(User user) throws SQLException {
+    public void addUserToDB(User user) {
 
         String name = user.getName();
         String surname = user.getSurname();
         String email = user.getEmail();
 
-        PreparedStatement ps = connection.prepareStatement("INSERT into users values (?, ?, ?)");
+        PreparedStatement ps = null;
+        try {
+            ps = connection.prepareStatement("INSERT into users values (?, ?, ?)");
+            ps.setString(1, name);
+            ps.setString(2, surname);
+            ps.setString(3, email);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        ps.setString(1, name);
-        ps.setString(2, surname);
-        ps.setString(3, email);
-        ps.execute();
+
     }
 
 }

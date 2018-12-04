@@ -3,6 +3,7 @@ package com.aidar.util;
 import com.aidar.dao.UserDAO;
 import com.aidar.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -14,8 +15,10 @@ import org.springframework.validation.Validator;
  */
 @Component
 public class UserValidator implements Validator {
+
     @Autowired
-    private UserDAO dao;
+    @Qualifier("hibernateUserDAO")
+    private UserDAO userDAO;
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -27,7 +30,7 @@ public class UserValidator implements Validator {
         User user = (User) o;
         String email = user.getEmail();
 
-        User userByEmail = dao.getUserByEmail(email);
+        User userByEmail = userDAO.getUserByEmail(email);
 
         if (userByEmail != null) {
             errors.rejectValue("email", "",

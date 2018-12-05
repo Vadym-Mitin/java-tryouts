@@ -1,7 +1,7 @@
-package com.aidar.util;
+package com.doit.util;
 
-import com.aidar.dao.UserDAO;
-import com.aidar.model.User;
+import com.doit.dao.UserDAO;
+import com.doit.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

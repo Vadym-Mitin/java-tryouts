@@ -1,4 +1,4 @@
-package com.aidar.model;
+package com.doit.model;
 
 
 import javax.persistence.*;

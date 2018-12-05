@@ -1,6 +1,6 @@
-package com.aidar.dao;
+package com.doit.dao;
 
-import com.aidar.model.User;
+import com.doit.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

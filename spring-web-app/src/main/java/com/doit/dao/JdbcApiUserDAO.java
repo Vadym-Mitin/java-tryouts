@@ -1,6 +1,6 @@
-package com.aidar.dao;
+package com.doit.dao;
 
-import com.aidar.model.User;
+import com.doit.model.User;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

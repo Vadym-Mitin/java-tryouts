@@ -2,6 +2,6 @@ package app.message;
 
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan("message.app")
+@ComponentScan("app.message")
 public class JavaComponentConfig {
 }

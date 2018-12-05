@@ -1,10 +1,12 @@
-package com.aidar.dao;
+package com.doit.dao;
 
-import com.aidar.model.User;
+import com.doit.model.User;
 
 import java.util.List;
 
 /**
+ * representation of database interaction for User entities
+ *
  * @author Vadym Mitin
  */
 public interface UserDAO {

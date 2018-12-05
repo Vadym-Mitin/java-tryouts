@@ -1,13 +1,13 @@
-package com.aidar;
+package com.doit;
 
-import com.aidar.dao.UserDAO;
-import com.aidar.model.User;
-import com.aidar.util.UserValidator;
+import com.doit.dao.UserDAO;
+import com.doit.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -25,14 +25,14 @@ import javax.validation.Valid;
  * @author Vadym Mitin
  */
 @Controller
-public class MainValidateController {
+public class MainController {
 
     @Autowired
     @Qualifier("hibernateUserDAO")
     private UserDAO userDAO;
 
     @Autowired
-    private UserValidator userValidator;
+    private Validator userValidator;
 
     @GetMapping("/")
     public String view(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name, Model model) {

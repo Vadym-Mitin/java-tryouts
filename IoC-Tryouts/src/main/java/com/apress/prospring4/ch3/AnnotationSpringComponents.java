@@ -10,8 +10,9 @@ public class AnnotationSpringComponents {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
         context.load("classpath:com/apress/prospring4/ch3/app-context-xml-annotation.xml");
         context.refresh();
-        MessageProvider provider = context.getBean("messageProvider", MessageProvider.class);
+        MessageRenderer re = context.getBean("messageRenderer", MessageRenderer.class);
 
-        System.out.println(provider.getMessage());
+        re.render();
+//        System.out.println(provider.getMessage());
     }
 }

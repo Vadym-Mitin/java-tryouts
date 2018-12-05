@@ -1,10 +1,11 @@
 package com.apress.prospring4.ch3;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("messageRenderer")
 public class StandardOutMessageRenderer implements MessageRenderer {
-
+    @Autowired
     private MessageProvider provider;
 
     @Override

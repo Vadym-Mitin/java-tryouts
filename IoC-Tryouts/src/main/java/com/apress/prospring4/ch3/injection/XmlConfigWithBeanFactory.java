@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch3;
+package com.apress.prospring4.ch3.injection;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;

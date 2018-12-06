@@ -16,7 +16,7 @@ public class InjectSimple {
 
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:com/apress/prospring4/ch3/injection/injection.xml");
+        ctx.load("classpath:com/apress/prospring4/ch3/injection.xml");
         ctx.refresh();
         InjectSimple simple = (InjectSimple) ctx.getBean("injectSimple");
         System.out.println(simple);

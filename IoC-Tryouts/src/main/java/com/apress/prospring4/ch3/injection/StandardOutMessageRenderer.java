@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch3;
+package com.apress.prospring4.ch3.injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -6,14 +6,14 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="messageRenderer"
-          class="com.apress.prospring4.ch3.StandardOutMessageRenderer">
+          class="com.apress.prospring4.ch3.injection.StandardOutMessageRenderer">
         <!--p:messageProvider-ref="messageProvider"-->
         <property name="messageProvider" ref="messageProvider"/>
     </bean>
 
-    <bean id="configurableProvider" class="com.apress.prospring4.ch3.ConfigurableMessageProvider">
+    <bean id="configurableProvider" class="com.apress.prospring4.ch3.injection.ConfigurableMessageProvider">
         <constructor-arg value="Configurable message"/>
     </bean>
 
-    <bean id="messageProvider" class="com.apress.prospring4.ch3.HelloWorldMessageProvider"/>
+    <bean id="messageProvider" class="com.apress.prospring4.ch3.injection.HelloWorldMessageProvider"/>
 </beans>

@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch3.method.injection;
+package com.apress.prospring4.ch3.injection.method.injection;
 
 /**
  * @author Vadym Mitin

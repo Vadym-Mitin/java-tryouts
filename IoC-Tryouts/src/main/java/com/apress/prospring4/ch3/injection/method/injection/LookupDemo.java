@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch3.method.injection;
+package com.apress.prospring4.ch3.injection.method.injection;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -7,7 +7,6 @@ import org.springframework.util.StopWatch;
 /**
  * @author Vadym Mitin
  */
-//com.apress.prospring4.ch3.method.injection.LookupDemo
 public class LookupDemo {
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(

@@ -1,9 +1,6 @@
 package com.apress.prospring4.ch3.injection;
 
-import com.apress.prospring4.ch3.Oracle;
 import org.springframework.context.support.GenericXmlApplicationContext;
-
-import java.util.Properties;
 
 /**
  * @author Vadym Mitin
@@ -18,7 +15,7 @@ public class InjectRef {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx =
                 new GenericXmlApplicationContext();
-        ctx.load("classpath:com/apress/prospring4/ch3/injection/injection-ref.xml");
+        ctx.load("classpath:com/apress/prospring4/ch3/injection-ref.xml");
         ctx.refresh();
         InjectRef injectRef = (InjectRef) ctx.getBean("injectRef");
         System.out.println(injectRef);

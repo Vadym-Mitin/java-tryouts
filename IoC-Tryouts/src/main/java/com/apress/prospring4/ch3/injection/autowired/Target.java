@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch3.autowired;
+package com.apress.prospring4.ch3.injection.autowired;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="oracle" name="wiseworm" class="com.apress.prospring4.ch3.BookwormOracle"/>
+    <bean id="oracle" name="wiseworm" class="com.apress.prospring4.ch3.injection.BookwormOracle"/>
 
     <bean id="injectRef" class="com.apress.prospring4.ch3.injection.InjectRef">
         <property name="oracle">

@@ -1,7 +1,4 @@
-package com.apress.prospring4.ch3;
-
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+package com.apress.prospring4.ch3.injection;
 
 //@Component
 //@Service("messageProvider")

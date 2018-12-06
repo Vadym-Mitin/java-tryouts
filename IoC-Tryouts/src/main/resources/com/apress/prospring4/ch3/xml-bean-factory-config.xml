@@ -3,6 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="oracle" name="bookwormOracle" class="com.apress.prospring4.ch3.BookwormOracle"/>
+    <bean id="oracle" name="bookwormOracle" class="com.apress.prospring4.ch3.injection.BookwormOracle"/>
 
 </beans>

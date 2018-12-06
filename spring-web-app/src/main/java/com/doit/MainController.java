@@ -17,7 +17,7 @@ import javax.validation.Valid;
  * https://devcolibri.com/spring-3-mvc-hello-world/
  * <p>
  * <p>
- * see the Mapped Server Log section for the route to your method mapping. like "{[/blablabla/blabla]}"
+ * see the Mapped Server Log section for the route to your method mapping. like "{[/blablabla/injection]}"
  * <p>
  * it is important to keep of the application context section in your servers launch configuration
  * because if you write something other than "/" server will send you to this address

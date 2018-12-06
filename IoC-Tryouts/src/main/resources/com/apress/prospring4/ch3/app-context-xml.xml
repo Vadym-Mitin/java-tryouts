@@ -11,7 +11,9 @@
         <property name="messageProvider" ref="messageProvider"/>
     </bean>
 
-    <bean id="messageProvider" class="com.apress.prospring4.ch3.ConfigurableMessageProvider">
+    <bean id="configurableProvider" class="com.apress.prospring4.ch3.ConfigurableMessageProvider">
         <constructor-arg value="Configurable message"/>
     </bean>
+
+    <bean id="messageProvider" class="com.apress.prospring4.ch3.HelloWorldMessageProvider"/>
 </beans>

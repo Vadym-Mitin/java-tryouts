@@ -2,9 +2,11 @@ package com.apress.prospring4.ch3;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service("messageProvider")
+@Component
+//@Service("messageProvider")
 public class ConfigurableMessageProvider implements MessageProvider {
     private final String message;
 

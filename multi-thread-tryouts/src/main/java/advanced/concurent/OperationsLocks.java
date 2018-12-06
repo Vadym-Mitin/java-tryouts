@@ -1,7 +1,5 @@
 package advanced.concurent;
 
-import sun.plugin.dom.exception.InvalidStateException;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -11,7 +9,7 @@ public class OperationsLocks {
 
     private static final int WAIT_SEC = 1;
 
-    public static void main(String[] args) throws InsufficientFundsException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         final Account a = new Account(1, 1000);
         final Account b = new Account(2, 2000);
 

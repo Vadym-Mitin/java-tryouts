@@ -36,8 +36,6 @@
         <constructor-arg>
             <list>
                 <value>Item 1</value>
-                <value>Item 2</value>
-                <value>Item 3</value>
             </list>
         </constructor-arg>
     </bean>

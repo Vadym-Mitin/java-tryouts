@@ -10,10 +10,11 @@ public class DeleteButtonActionListener extends ListTableActionListener {
     public void actionPerformed(ActionEvent e) {
         int selectedRow = table.getSelectedRow();
 
+        boolean isTablefilled = table.getRowCount() > 0;
         boolean tableNotEditing = !table.isEditing();
-        boolean rightRowSelect = selectedRow != -1;
+        boolean rightRowSelect = selectedRow >= 0;
 
-        if (rightRowSelect && tableNotEditing) {
+        if (rightRowSelect && tableNotEditing && isTablefilled) {
             list.remove(selectedRow);
             table.revalidate();
         }

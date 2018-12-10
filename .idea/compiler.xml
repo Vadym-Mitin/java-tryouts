@@ -24,12 +24,14 @@
         <module name="oop-tryout" />
         <module name="Oracle-Tryout" />
         <module name="Spring-swing-tryout" />
-        <module name="Spring-Tryouts" />
         <module name="spring-web-app" />
         <module name="vert-x-tryout" />
         <module name="vertxs" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="trytoaddmodue" target="1.8" />
+      <module name="trytoaddmodule" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

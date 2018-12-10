@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Spring-Tryouts</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>spring-web-app</module>
+        <module>Spring-swing-tryout</module>
+    </modules>
+
 
     <properties>
         <spring.version>4.3.21.RELEASE</spring.version>

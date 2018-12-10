@@ -23,6 +23,7 @@
         <module name="numeric-operations" />
         <module name="oop-tryout" />
         <module name="Oracle-Tryout" />
+        <module name="Spring-swing-tryout" />
         <module name="spring-web-app" />
         <module name="vert-x-tryout" />
         <module name="vertxs" />

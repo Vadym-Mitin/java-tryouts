@@ -25,6 +25,7 @@
         <module>DB-Tryout</module>
         <module>IoC-Tryouts</module>
         <module>spring-web-app</module>
+        <module>Spring-swing-tryout</module>
 
     </modules>
     <dependencies>

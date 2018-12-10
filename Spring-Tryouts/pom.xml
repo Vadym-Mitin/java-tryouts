@@ -15,8 +15,8 @@
     <modules>
         <module>spring-web-app</module>
         <module>Spring-swing-tryout</module>
+        <module>AOP-tryouts</module>
     </modules>
-
 
     <properties>
         <spring.version>4.3.21.RELEASE</spring.version>

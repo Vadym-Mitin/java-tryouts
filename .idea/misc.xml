@@ -12,6 +12,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Spring-Tryouts/maven-source/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Tryouts/try to add modu;e/pom.xml" />
       </set>
     </option>

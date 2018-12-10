@@ -10,6 +10,7 @@
         <module name="annotation-tryouts" />
         <module name="annotations" />
         <module name="annotationtryouts" />
+        <module name="AOP-Tryouts" />
         <module name="binary_operations" />
         <module name="collections-tryout" />
         <module name="collectionstryout" />
@@ -30,6 +31,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="mavensource" target="1.8" />
       <module name="trytoaddmodue" target="1.8" />
       <module name="trytoaddmodule" target="1.8" />
     </bytecodeTargetLevel>

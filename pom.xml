@@ -26,6 +26,7 @@
         <module>IoC-Tryouts</module>
         <module>spring-web-app</module>
         <module>Spring-swing-tryout</module>
+        <module>Spring-Tryouts</module>
 
     </modules>
     <dependencies>

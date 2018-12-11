@@ -12,6 +12,10 @@ public class MyLogger {
         System.out.println(obj);
     }
 
+    public void handleException() {
+        System.out.println("division by zero");
+    }
+
     public void init() {
         System.out.println("init");
     }

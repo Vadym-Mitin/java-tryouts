@@ -16,6 +16,7 @@
         <module>spring-web-app</module>
         <module>Spring-swing-tryout</module>
         <module>AOP-tryouts</module>
+        <module>prospring4-book-tryouts</module>
     </modules>
 
     <properties>

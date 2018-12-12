@@ -23,10 +23,8 @@
         <module>multi-thread-tryouts</module>
         <module>java-fx-tryouts</module>
         <module>DB-Tryout</module>
-        <module>IoC-Tryouts</module>
-        <module>Spring-Tryouts</module>
-
     </modules>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

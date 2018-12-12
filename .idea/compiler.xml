@@ -10,29 +10,29 @@
         <module name="annotation-tryouts" />
         <module name="annotations" />
         <module name="annotationtryouts" />
-        <module name="AOP-Tryouts" />
         <module name="binary_operations" />
         <module name="collections-tryout" />
         <module name="collectionstryout" />
         <module name="DB-Tryout" />
         <module name="design-patterns" />
         <module name="exceptions" />
-        <module name="IoC-Tryouts" />
         <module name="java-fx-tryouts" />
         <module name="multi-thread-tryouts" />
-        <module name="NumeralOperations" />
         <module name="numeric-operations" />
         <module name="oop-tryout" />
         <module name="Oracle-Tryout" />
-        <module name="prospring4-book-tryouts" />
-        <module name="Spring-swing-tryout" />
-        <module name="spring-web-app" />
         <module name="vert-x-tryout" />
         <module name="vertxs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="AOP-Tryouts" target="1.8" />
+      <module name="IoC-Tryouts" target="1.8" />
       <module name="mavensource" target="1.8" />
+      <module name="prospring4-book-tryouts" target="1.8" />
+      <module name="Spring-swing-tryout" target="1.8" />
+      <module name="Spring-Tryouts" target="1.8" />
+      <module name="spring-web-app" target="1.8" />
       <module name="trytoaddmodue" target="1.8" />
       <module name="trytoaddmodule" target="1.8" />
     </bytecodeTargetLevel>

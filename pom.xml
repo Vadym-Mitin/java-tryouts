@@ -23,6 +23,7 @@
         <module>multi-thread-tryouts</module>
         <module>java-fx-tryouts</module>
         <module>DB-Tryout</module>
+        <module>file-read-tryout</module>
     </modules>
 
     <dependencies>

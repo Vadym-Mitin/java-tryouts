@@ -16,6 +16,7 @@
         <module name="DB-Tryout" />
         <module name="design-patterns" />
         <module name="exceptions" />
+        <module name="file-read-tryout" />
         <module name="java-fx-tryouts" />
         <module name="multi-thread-tryouts" />
         <module name="numeric-operations" />

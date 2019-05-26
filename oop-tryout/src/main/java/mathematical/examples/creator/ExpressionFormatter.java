@@ -26,27 +26,27 @@ public class ExpressionFormatter {
 
     private static String numberFormat(String number) {
         StringBuffer sb = new StringBuffer();
-        int value = Integer.valueOf(number);
-        int metrs = value / 1000;
-        if (metrs > 0) {
-            value -= metrs * 1000;
-            sb.append(metrs);
+        int millimeters = Integer.valueOf(number);
+        int meters = millimeters / 1000;
+        if (meters > 0) {
+            millimeters -= meters * 1000;
+            sb.append(meters);
             sb.append("M ");
         }
-        int deci = value / 100;
-        if (deci > 0) {
-            value -= deci * 100;
-            sb.append(deci);
+        int deciMeters = millimeters / 100;
+        if (deciMeters > 0) {
+            millimeters -= deciMeters * 100;
+            sb.append(deciMeters);
             sb.append("DM ");
         }
-        int santi = value / 10;
-        if (santi > 0) {
-            value -= santi * 10;
-            sb.append(santi);
+        int centiMeters = millimeters / 10;
+        if (centiMeters > 0) {
+            millimeters -= centiMeters * 10;
+            sb.append(centiMeters);
             sb.append("CM ");
         }
-        if (value > 0) {
-            sb.append(value);
+        if (millimeters > 0) {
+            sb.append(millimeters);
             sb.append("MM ");
         }
         return sb.toString();

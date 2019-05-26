@@ -7,28 +7,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="annotation-tryouts" />
-        <module name="annotations" />
-        <module name="annotationtryouts" />
-        <module name="binary_operations" />
-        <module name="collections-tryout" />
-        <module name="collectionstryout" />
-        <module name="DB-Tryout" />
         <module name="design-patterns" />
-        <module name="exceptions" />
-        <module name="file-read-tryout" />
-        <module name="java-fx-tryouts" />
-        <module name="multi-thread-tryouts" />
         <module name="numeric-operations" />
-        <module name="oop-tryout" />
-        <module name="Oracle-Tryout" />
         <module name="vert-x-tryout" />
+        <module name="Oracle-Tryout" />
+        <module name="multi-thread-tryouts" />
+        <module name="annotation-tryouts" />
+        <module name="annotationtryouts" />
+        <module name="Servlet-tryouts" />
+        <module name="oop-tryout" />
+        <module name="collectionstryout" />
+        <module name="java-fx-tryouts" />
+        <module name="binary_operations" />
+        <module name="file-read-tryout" />
+        <module name="annotations" />
         <module name="vertxs" />
+        <module name="collections-tryout" />
+        <module name="DB-Tryout" />
+        <module name="exceptions" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="AOP-Tryouts" target="1.8" />
       <module name="IoC-Tryouts" target="1.8" />
+      <module name="JSPTryout" target="1.8" />
+      <module name="JSPtryouts" target="1.8" />
       <module name="mavensource" target="1.8" />
       <module name="prospring4-book-tryouts" target="1.8" />
       <module name="Spring-swing-tryout" target="1.8" />
